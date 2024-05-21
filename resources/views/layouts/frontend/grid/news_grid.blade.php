@@ -9,9 +9,9 @@
                             <div class="meta mt-2">
                                 <div class="user">
                                     <div class="thumb">
-                                        <img src="{{ asset('uploads/profile_photo') }}/{{ auth()->user()->profile_photo }}" alt="img">
-                                    </div>
-                                    <a href="#">{{ auth()->user()->name }}</a>
+                                            <img src="{{ asset('frontend_assets') }}/assets/img/banner/user.jpg" alt="img">
+                                        </div>
+                                        <a href="#">Stiven Jackson</a>
                                 </div>
                                 <div class="date">
                                     <i class="fa fa-clock-o"></i>

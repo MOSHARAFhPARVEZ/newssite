@@ -3,6 +3,7 @@
 use App\Http\Controllers\BreakingnewsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactpageController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\MakenewsController;
@@ -21,6 +22,8 @@ Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::post('/message', [ContactController::class, 'message'])->name('message');
 // show message in dashboard
 Route::get('/showmessage', [ContactController::class, 'showmessage'])->name('showmessage');
+// Contact page info
+Route::resource('/contactpage',ContactpageController::class);
 // ===============
 // frontend part==
 // ===============

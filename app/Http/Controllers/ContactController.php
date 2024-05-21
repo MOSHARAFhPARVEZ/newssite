@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contactmail;
 use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -21,6 +23,7 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
         // error part
+        // insert part
         Contact::insert([
             'name' => $request->name,
             'number' => $request->number,
@@ -28,6 +31,16 @@ class ContactController extends Controller
             'message' => $request->message,
             'created_at' => Carbon::now(),
         ]);
+        // insert part
+        // mail part
+        $data = [
+            'name' => $request->name,
+            'number' => $request->number,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+        Mail::to('mmhparvez3800@gmail.com')->send(new Contactmail($data)) ;
+        // mail part
         return back()->with('success','You Successfully Sent Your Message');
     }
     public function showmessage()

@@ -5,8 +5,7 @@
 <div class="container">
         <div class="braking-news-area">
             <div class="row">
-                @if ($breakingnewses->stutas=0)
-                @else
+
                 @foreach ($breakingnewses as $breakingnews)
                     <div class="col-lg-12">
                         <div class="braking-news-wrap">
@@ -18,7 +17,7 @@
                         </div>
                     </div>
                 @endforeach
-                @endif
+               
             </div>
         </div>
     </div>

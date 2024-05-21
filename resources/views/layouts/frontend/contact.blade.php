@@ -20,19 +20,17 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="media-post-wrap mb-0">
+                    @foreach ($contactifos as $contactifo)
                     <div class="thumb mb-5">
-                        <img class="w-100" src="{{ asset('frontend_assets') }}/assets/img/blog/contact.jpg" alt="img">
+                        <img class="w-100" src="{{ asset('uploads/contact_photo') }}/{{ $contactifo->contact_photo }}" alt="img">
                     </div>
                     <h3>
                         Say Hello
                     </h3>
-                    <p>Nec nascetur mus vicolor rhoncus augue quisque parturient etiam imperdet sit nisi tellus faucibus
-                        orcimperdiet venena nullam rhoncus curabitur monteante. Vestibulum sed gravida nibh. Suscipito
-                        econgue lorem, id tempor ipsum molestie sit amet. Nulla ultricies vitae erat in tincidunt.
-                        Maecenas tempus quam et ipsum elementum, a efficitur lectus tincidunt.</p>
-                    <p class="mb-5">Cras id ligula consequat, sagittis nulla at, sollicitudin lorem. Orci varius natoque
-                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus eleifend, dolor vel
-                        condimentum imperdiet.</p>
+                    <p>
+                        {{ $contactifo->description }}
+                    </p>
+                    @endforeach
                     <h3 class="mt-5">Send Us a Message</h3>
                     <p>Your email address will not be published. All the fields are required.</p>
                     <form class="comment-form mt-5" action="{{ route('message') }}" method="POST">
